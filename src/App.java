@@ -80,7 +80,6 @@ public class App {
     private JScrollPane scrollPane_1;
     private JScrollPane scrollPane_2;
     private JTable table_1;
-    private JProgressBar progressBar;
 
     private void initialize() {
         frmzakdolgozat = new JFrame();
@@ -119,7 +118,6 @@ public class App {
         szallitasi.add(textField_3);
 
         btnNewButton_5 = new JButton("GO");
-        btnNewButton_5.setBackground(Color.MAGENTA);
         btnNewButton_5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 int fogyasztokSzama = Integer.parseInt(textField_2.getText());
@@ -292,11 +290,6 @@ public class App {
         panels[0] = hatizsak;
         panels[1] = linearequation;
         panels[2] = szallitasi;
-
-        progressBar = new JProgressBar();
-        progressBar.setValue(50);
-        progressBar.setBounds(585, 22, 444, 123);
-        szallitasi.add(progressBar);
         linearequation.setLayout(null);
 
         JLabel lblNewLabel = new JLabel("Ismeretlenek sz\u00E1ma");
@@ -367,8 +360,15 @@ public class App {
         scrollPane2.setBounds(10, 95, 1047, 498);
         scrollPane2.setViewportView(table);
         linearequation.add(scrollPane2);
+        
+        JScrollPane scrollPane_3 = new JScrollPane();
+        scrollPane_3.setBounds(589, 0, 336, 70);
+        linearequation.add(scrollPane_3);
 
-
+        JTextArea textArea_11 = new JTextArea();
+        textArea_11.setFont(new Font("Monospaced", Font.PLAIN, 18));
+        scrollPane_3.setViewportView(textArea_11);
+        
         btnNewButton_3 = new JButton("GO");
         btnNewButton_3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
@@ -452,8 +452,11 @@ public class App {
                     }
 
                 }
+                
+                String megallapitas;
                 if (!(vanSzabadSor == 1 && vanSzabadOszlop == 1))
-                    Pivot.megallpitas(matrix, row_checked, col_checked, sortX);
+                	textArea_11.setText(Pivot.megallpitas(matrix, row_checked, col_checked, sortX));
+                
 
 
                 /*for(int i = 0; i < row_checked.length; i++)
@@ -501,7 +504,7 @@ public class App {
         btnNewButton_3.setBounds(10, 604, 89, 23);
         linearequation.add(btnNewButton_3);
 
-        JButton btnNewButton_4 = new JButton("SzÃ¡llÃ­tÃ¡si feladat");
+        JButton btnNewButton_4 = new JButton("Szállítási feladat");
         btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 18));
 
         btnNewButton_4.addActionListener(new ActionListener() {
@@ -514,6 +517,7 @@ public class App {
         frmzakdolgozat.getContentPane().add(btnNewButton_4);
 
         textArea.setEditable(false);
+       
         ///////////////////////////////////////////////////////////////
     }
 
@@ -526,7 +530,7 @@ public class App {
             output[i] = "F" + i;
         }
 
-        output[darab + 1] = "KÃ­nÃ¡lat";
+        output[darab + 1] = "Kínálat";
 
         return output;
     }
@@ -554,7 +558,7 @@ public class App {
             }
         }
 
-        output[termelok][0] = "IgÃ©ny";
+        output[termelok][0] = "Igény";
 
         return output;
     }

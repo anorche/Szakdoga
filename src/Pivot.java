@@ -194,19 +194,19 @@ public class Pivot {
     }
 
 
-    public static void megallpitas(double[][] matrix, boolean[] sor, boolean[] oszlop, int[] sortX) {
+    public static String megallpitas(double[][] matrix, boolean[] sor, boolean[] oszlop, int[] sortX) {
 
+    	String return_val= "";
+    	
         int maradtEgysegvektorBazisban;
 
         for (int i = 0; i < sor.length; i++) {
             if (!sor[i]) {
                 maradtEgysegvektorBazisban = 1;
-                System.out.println("Maradt egysegvektor a bazisban");
-                System.out.println(matrix[i][matrix[0].length - 1]);
+                return_val += "Maradt egysegvektor a bazisban\n";
 
                 if (maradtEgysegvektorBazisban == 1 && matrix[i][matrix[0].length - 1] != 0) {
-                    System.out.println("Nincs megoldÃ¡s");
-                    return;
+                	return_val += "Nincs megoldás\n";
                 }
             }
         }
@@ -220,12 +220,14 @@ public class Pivot {
             }
         }
         if (MindenOszlopVolt == 1) {
-            System.out.println("Egy megoldÃ¡s van");
+        	return_val +="Egy megoldás van\n";
             for (int i = 0; i < matrix.length; i++) {
-                System.out.println("X" + sortX[i] + "= " + matrix[i][matrix[0].length - 1]);
+            	return_val += "X" + sortX[i] + "= " + matrix[i][matrix[0].length - 1] + "\n";
             }
-        } else System.out.println("VÃ©gtelen sok megoldÃ¡s van");
+        } else return_val += "Végtelen sok megoldás van";
 
+    
+        return return_val;
     }
 
 
