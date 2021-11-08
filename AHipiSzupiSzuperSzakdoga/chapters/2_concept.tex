@@ -1,40 +1,38 @@
 \Chapter{Koncepció}
 
-\Section{A fejezet célja}
-
-Ez a fejezet még nem a saját eredményekkel foglalkozik, hanem bemutatja, mi a problémakör, milyen módszerekkel, milyeneredményeket sikerült elérni eddig másoknak.
-
-A hivatkozások jelentős része ehhez a fejezethez szokott kötődni.
-(Egy hivatkozás például így néz ki \cite{coombs1987markup}.)
-Itt lehet bemutatni a hasonló alkalmazásokat.
-
-\Section{Tartalom és felépítés}
-
-A fejezet tartalma témától függően változhat. Az alábbiakat attól függően különböző arányban tartalmazhatják.
-\begin{itemize}
-\item Irodalomkutatás. Amennyiben a dolgozat egy módszer kidolgozására, kifejlesztésére irányul, akkor itt lehet részletesen végignézni (módszertani vagy időrendi bontásban), hogy az eddigiekben milyen eredmények születtek a témakörben.
-\item Technológia. Mivel jellemzően kutatásról vagy szoftverfejlesztésről van szó, ezért annak a jellemző elemeit, technikai részleteit itt kell bemutatni.
-Ez tehát egy módszeres bevezetés ahhoz, hogy ha valaki nem jártas a témakörben, akkor tudja, hogy a dolgozat milyen aktuálisan elérhető eredményeket, eszközöket használt fel.
-\item Piackutatás. Bizonyos témáknál új termék vagy szolgáltatás kifejlesztése a cél.
-Ekkor érdemes annak alaposan utánanézni, hogy aktuálisan milyen eszközök érhetők el a piacon.
-Ez szoftverek esetében a hasonló alkalmazások bemutatását, táblázatos formában történő összehasonlítását jelentheti.
-Szerepelhetnek képek és észrevételek a viszonyításként bemutatott alkalmazásokhoz.
-\item Követelmény specifikáció. Külön szakaszban érdemes részletesen kitérni az elkészítendő alkalmazással kapcsolatos követelményekre.
-Ehhez tartozhatnak forgatókönyvek (\textit{scenario}-k).
-A szemléletesség kedvéért lehet hozzájuk képernyőkép vázlatokat is készíteni, vagy a használati eseteket más módon szemléltetni.
-\end{itemize}
-
-\Section{Amit csak említés szintjén érdemes szerepeltetni}
-
-Az olvasóról annyit feltételezhetünk, hogy programozásban valamilyen szinten járatos, és a matematikai alapfogalmakkal sem ebben a dolgozatban kell megismertetni.
-A speciális eszközök, programozási nyelvek, matematikai módszerekk és jelölések persze jó, hogy ha említésre kerülnek, de nem kell nagyon belemenni a közismertnek tekinthető dolgokba.
 
 	\Section{Lineáris egyenletrendszerek}
 	
-	A matematikában a lineáris egyenletrendszer (vagy lineáris rendszer) egy vagy több lineáris egyenlet gyűjteménye, amely ugyanazt a változóhalmazt tartalmazza. Például ez egy 3 ismeretlent tartalmazó rendszer:
 	
-	%pelda.
+	A lineáris programozási feladatokban mind a célfüggvény, mind a feltételeket meghatározó függvények az $x_1, x_2,\ldots ,x_n$ döntési változók lineáris függvényei. A kényszerfeltételek megadhatók lineáris egyenlőség vagy egyenlőtlenség formájában, és az egyes döntési változók előjelére is lehetnek megkötések. Így azonban még mindig rengeteg változata lehet az LP-problémáknak, amelyekre mindannyiunknak különböző megoldási módszereket kell konstruálnunk. A következőkben megmutatjuk, hogy a probléma optimális megoldásának létezése és meghatározása szempontjából elegendő egy speciális LP-probléma, az ún. standard probléma vizsgálatára szorítkozni. Egy lineáris programozási feladatot akkor nevezünk standard feladatnak, ha a következő formában van megadva: 
 	
+$$c^Tx \rightarrow \max$$
+$$Ax=b, (b\geq0)$$
+$$x \geq0$$	
+ahol
+
+$c=(c_1,c_2,\ldots,c_n)^T$ a vektor a célfügvény együtthatóiból áll
+
+%%Melohelyen
+
+
+Lépések sorozata egy általános LP-feladat szabványos formává alakításához:
+
+Minimális probléma esetén a problémát maximális problémává alakítjuk át úgy, hogy a célfüggvény együtthatóit megszorozzuk (-1)-gyel, mivel az f (x) célfüggvénynek abban az x pontban van minimuma, ahol a -f (x) célfüggvény maximális. 
+
+Ha a k-adik feltétel jobb oldalán lévő bk konstans negatív, akkor a teljes feltételes egyenlőség vagy egyenlőtlenség (-1)-szeresét vesszük. 
+
+Ha az xi döntési változónak nincs nemnegatív feltétele, akkor ezt a változót két újonnan bevezetett nemnegatív változó különbségeként írjuk fel: xi = x ′ -x ′ ′.
+Ha az xj ≤ 0 feltétel van megadva, akkor a változó ellenkezőjét a nem negatív ̃xj = -xj változó bevezetésével számítjuk ki. 
+
+Ha a k-adik kényszer ≤ egyenlőtlenség az ak1x1 + ak2x2 + ... formában adott. + aknxn ≤bk, akkor egy nemnegatív uk segédváltozó hozzáadásával adunk hozzá egy egyenletet: 
+
+ak1x1 + ak2x2 + ... + aknxn + uk = bk
+
+Ha az l-edik kényszer ≥ egyenlőtlenség az al1x1 + al2x2 + ... formában. + alnxn ≥ bl, akkor egyenlőséggé alakítjuk át egy nem negatív v1 segédváltozó kivonásával. 
+
+al1x1 + al2x2 + ... + alnxn −vl = b
+
 	
 	
 	\Section{Hátizsák probléma}
@@ -265,50 +263,42 @@ A speciális eszközök, programozási nyelvek, matematikai módszerekk és jel�
 	$(S^{*}) \mathrm {profit} (S')\geq (1-\varepsilon )\cdot \mathrm {profit} (S^{*})$, 
 	ahol $S*{\displaystyle S^{*}} S^{*}$ egy optimális megoldás.
 	
-	\Section{A közlekedési probléma megoldása}
+	\Section{A szállítási probléma megoldása}
 	
 	A termékeknek a termelési és raktározási helyekről a keresleti központokba történő szállításával járó költségek minimalizálása a termékforgalmazással foglalkozó vállalatok számára a nyereségesség fenntartásának lényeges része. Mivel a szállítási költségek általában nem ellenőrizhetők, a teljes költség minimalizálása a legjobb termék útvonalválasztási döntések meghozatalát igényli. Ezt az alapvető problémát először az 1940-es évek elején fogalmazták meg lineáris programozási problémaként, és a köznyelvben szállítási problémaként ismert.
 	
 	
-	Mi a közlekedési probléma?
+	\SubSection{Mi a szállítási probléma?}
 	
 	A szállítási probléma egyfajta lineáris programozási probléma, amelynek célja, hogy minimalizálja egy termék M forrásból N célállomásra történő elosztásának költségét.
 	
-	A közlekedési problémát számos területről származó példával lehet leírni. Az egyik alkalmazás a csapatok hatékony mozgatásának problémája a bázisokról a harctéri helyszínekre. Egy másik az ügynökök vagy munkások optimális hozzárendelése különböző munkakörökhöz vagy pozíciókhoz. Messze a leggyakoribb alkalmazás az áruk szállítása több gyárból több raktárhelyszínre, vagy a raktárakból a kirakatokba.
+	A szállítási problémát számos területről származó példával lehet leírni. Az egyik alkalmazás a csapatok hatékony mozgatásának problémája a bázisokról a harctéri helyszínekre. Egy másik az ügynökök vagy munkások optimális hozzárendelése különböző munkakörökhöz vagy pozíciókhoz. Messze a leggyakoribb alkalmazás az áruk szállítása több gyárból több raktárhelyszínre, vagy a raktárakból a kirakatokba.
 	
-	Szállítási probléma példa
+	\textbf{Szállítási probléma példa}
 	
 	Vegyük a következő példát:
 	
-	XYZ Inc. két gyárral rendelkezik az ország különböző pontjain, ahol kütyüket gyártanak. Értékesítési partnerüknek három központi raktára van, ahonnan ezeket a widgeteket szállítják a különböző ügyfeleiknek. A gyárak hetente egy-egy adott számú widgetet tudnak előállítani, és az egyes raktárak várható kereslete is ismert. Minden gyárból minden raktárba szállítási költséget kell fizetni. Melyik gyárnak hány widgetet kell gyártania és melyik raktárba szállítania, hogy az egyes helyszíneken minimális költséggel kielégítse a keresletet?
+	XYZ Inc. két gyárral rendelkezik az ország különböző pontjain, ahol termékeket gyártanak. Értékesítési partnerüknek három központi raktára van, ahonnan ezeket a termékeket szállítják a különböző ügyfeleiknek. A gyárak hetente egy-egy adott számú terméket tudnak előállítani, és az egyes raktárak várható kereslete is ismert. Minden gyárból minden raktárba szállítási költséget kell fizetni. Melyik gyárnak hány terméket kell gyártania és melyik raktárba szállítania, hogy az egyes helyszíneken minimális költséggel kielégítse a keresletet?
 	
-	Ez a problémafeltevés egy tipikus szállítási probléma minden összetevőjét tartalmazza. A források és a célállomások általánosak - lehetnek fakitermelő helyek és fűrészüzemek, gyárak és raktárak, raktárak és raktárak, bázisok és csataterek stb.
+	Ez a problémafeltevés egy tipikus szállítási probléma minden összetevőjét tartalmazza. A források és a célállomások általánosak - lehetnek fakitermelő helyek és fűrészüzemek, gyárak és raktárak...
 	
-	Minden esetben van valamilyen kereslet vagy szükséglet D
-	minden egyes N helyen, valamilyen S kínálat minden egyes M helyen, és egy egységnek egy adott M helyről egy adott N helyre történő szállításához (vagy felhasználásához) kapcsolódó c költség. Összesen M x N
+	Minden esetben van valamilyen kereslet vagy szükséglet $D$ minden egyes $N$ helyen, valamilyen $S$ kínálat minden egyes $M$ helyen, és egy egységnek egy adott $M$ helyről egy adott $N$ helyre történő szállításához (vagy felhasználásához) kapcsolódó $c$ költség. Összesen $M x N$ ilyen költség.
 	
-	ilyen költség.
+	A költség, $c$ lehet egy olyan számítás, amely olyan tényezőket foglal magában, mint az idő, a távolság, az anyagköltségek stb., de lehet bármilyen, a probléma szempontjából releváns mennyiség is.
 	
-	A költség, c
-	
-	lehet egy olyan számítás, amely olyan tényezőket foglal magában, mint az idő, a távolság, az anyagköltségek stb., de lehet bármilyen, a probléma szempontjából releváns mennyiség is.
-	
-	Miután a készletek, az igények és a költségek ismertek, a probléma az, hogy meghatározzuk az egységek számát, x
-	, amelyet le kell gyártani és el kell küldeni az M ellátóközpontok mindegyikéből az N
-	
-	keresleti helyekre.
+	Miután a készletek, az igények és a költségek ismertek, a probléma az, hogy meghatározzuk az egységek számát, $x$, amelyet le kell gyártani és el kell küldeni az $M$ ellátóközpontok mindegyikéből az $N$ keresleti helyekre.
 	
 	A teljes költség az összes egyedi költség összege, szorozva az egyes ellátóközpontokból az egyes keresleti központokba gyártandó és onnan elszállítandó egyedi egységekkel. Ha ezt optimalizálási problémaként fogalmazzuk meg, a cél a teljes költség minimalizálása:
 	
 	$$\sum_{i=1}^M \sum_{j=1}^N c_{ij}x_{ij}$$
 
 Ezzel párhuzamosan van néhány szabály (megkötés), amelyet teljesíteni kell:
-
-A szállított egységek számának kisebbnek vagy egyenlőnek kell lennie a teljes kínálattal.
-A szállított darabszámnak meg kell egyeznie, vagy meg kell felelnie az egyes helyszíneken jelentkező keresletnek.
-A szállítandó egységek számának nagyobbnak vagy egyenlőnek kell lennie nullánál (nincs negatív érték).
-
-Kiegyensúlyozott szállítási probléma esetén, amikor a teljes kereslet megegyezik a teljes kínálattal, a kényszerek a következő matematikai ábrázolással rendelkeznek:
+	\begin{itemize}
+\item{A szállított egységek számának kisebbnek vagy egyenlőnek kell lennie a teljes kínálattal.}
+\item{A szállított darabszámnak meg kell egyeznie, vagy meg kell felelnie az egyes helyszíneken jelentkező keresletnek.}
+\item{A szállítandó egységek számának nagyobbnak vagy egyenlőnek kell lennie nullánál (nincs negatív érték).}
+\end{itemize}
+Kiegyensúlyozott szállítási probléma esetén, amikor a teljes kereslet megegyezik a teljes kínálattal, a korlátok a következő matematikai ábrázolással rendelkeznek:
 
 $$\sum_{j=1}^N x_{ij} = S_{i}, i=1, …, M$$
 $$\sum_{i=1}^M x_{ij} = D_{j}, j=1, …, N$$
@@ -318,16 +308,21 @@ Megjegyzendő, hogy előfordulhat, hogy a túlkínálat vagy a túlkereslet kieg
 
 A teljes költségfüggvény a három megszorítással együtt egy jól formált lineáris programozási (LP) optimalizálási problémát határoz meg lineáris megszorításokkal. Ez a probléma kifejezetten a kiegyensúlyozott szállítási probléma néven ismert.
 
-A közlekedési probléma megoldása
+\SubSection{A szállítási probléma megoldása}
 
 
-Északnyugati sarok szabály
+\textbf{Északnyugati sarok szabály}
 
 Meghatározás: Az északnyugati sarokszabály egy olyan módszer, amelyet a szállítási probléma kezdeti megvalósítható megoldásának kiszámítására alkalmaznak. Az északnyugati sarok elnevezést azért kapta ez a módszer, mert az alapváltozókat a bal szélső sarokból választjuk ki.
 
 Az északnyugati sarok fogalma jól megérthető az alábbiakban megadott szállítási problémán keresztül:
 
-%Kep
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=7cm]{images/1.jpg}
+	\caption{Csoportosítás indexelés nélkül}
+	\label{fig:explain_2_1}
+\end{figure}
 
 A táblázatban három A, B és C forrás van megadva, amelyek termelési kapacitása 50 egység, 40 egység, illetve 60 egység termék. A három kiskereskedő D, E és F keresletét minden nap legalább 20 egység, 95 egység és 35 egység termékkel kell kielégíteni. A szállítási költségek szintén szerepelnek a mátrixban.
 
@@ -337,7 +332,12 @@ Hasonlóképpen, ha a kínálat nagyobb, mint a kereslet, akkor létre kell hozn
 
 Ha a kereslet és a kínálat megegyezik, a következő eljárást kell követni:
 
-%kep
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=7cm]{images/2.jpg}
+	\caption{Csoportosítás indexelés nélkül}
+	\label{fig:explain_2_1}
+\end{figure}
 
 Válassza ki a mátrix északnyugati vagy bal szélső sarkát, és a keresleti és kínálati korlátok között a lehető legtöbb egységet rendelje az AD cellához. Például 20 egységet rendelünk az első cellához, amely kielégíti a D célállomás keresletét, miközben a kínálat többletet mutat.
 Most mozogjon vízszintesen, és rendeljen 30 egységet az AE cellához. Mivel 30 egység áll rendelkezésre az A forrással, a kínálat teljesen telítetté válik.
@@ -347,7 +347,7 @@ Mozogjunk vízszintesen a mátrixban, és rendeljünk 35 egységet a CF celláho
 
 A teljes költség kiszámítható az egyes cellákhoz rendelt egységek és az érintett szállítási költség szorzataként. Ezért,
 
-Teljes költség = 20*5+ 30*8+ 40*6+ 25*9+ 35*6 = 1015 rúpia.
+Teljes költség = 20*5+ 30*8+ 40*6+ 25*9+ 35*6 = 1015.
 
 
 

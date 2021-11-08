@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.19)  8 NOV 2021 16:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.11.1)  8 NOV 2021 21:33
 entering extended mode
 **./dolgozat.tex
 (dolgozat.tex
 LaTeX2e <2021-06-01> patch level 1
-L3 programming layer <2021-10-12>
+L3 programming layer <2021-10-18>
 (C:\Program Files\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2021/02/12 v1.4n Standard LaTeX document class
 (C:\Program Files\MiKTeX\tex/latex/base\size12.clo
@@ -288,7 +288,7 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
 (C:\Program Files\MiKTeX\tex/generic/babel\babel.sty
-Package: babel 2021/10/13 3.64 The Babel package
+Package: babel 2021/10/19 3.65 The Babel package
 \babel@savecnt=\count280
 \U@D=\dimen172
 \l@unhyphenated=\language84
@@ -309,9 +309,6 @@ Language: magyar 2019/01/14 v1.5c Magyar (Hungarian) support for babel
 Package babel Info: Making ` an active character on input line 2819.
 \c@footnote@add=\count282
 \c@footnote@ch=\count283
-)
-(C:\Program Files\MiKTeX\tex/latex/babel-hungarian\magyar.ldf
-Language: magyar 2019/01/14 v1.5c Magyar (Hungarian) support for babel
 ))
 \c@theorem=\count284
 \c@prooF=\count285
@@ -486,14 +483,17 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip75
 )
 (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-10-12 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count304
 \l__pdf_internal_box=\box60
 )
 (dolgozat.aux (cover/cimlap.aux) (cover/feladatkiiras.aux)
-(chapters/1_introduction.aux) (chapters/2_concept.aux) (chapters/3_design.aux)
-(chapters/4_implementation.aux) (chapters/5_test.aux) (chapters/6_summary.aux)
-(cover/hasznalati.aux))
+(chapters/1_introduction.aux) (chapters/2_concept.aux
+
+LaTeX Warning: Label `fig:explain_2_1' multiply defined.
+
+) (chapters/3_design.aux) (chapters/4_implementation.aux) (chapters/5_test.aux)
+(chapters/6_summary.aux) (cover/hasznalati.aux))
 \openout1 = `dolgozat.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
@@ -599,7 +599,7 @@ LaTeX Info: Redefining \mit on input line 578.
 \openout2 = `cover/cimlap.aux'.
 
  (cover/cimlap.tex
-<images/me_logo.png, id=82, 1204.5pt x 1148.29pt>
+<images/me_logo.png, id=66, 1204.5pt x 1148.29pt>
 File: images/me_logo.png Graphic file (type png)
 <use images/me_logo.png>
 Package pdftex.def Info: images/me_logo.png  used on input line 9.
@@ -621,8 +621,8 @@ Non-PDF special ignored!
 
 
 
-{C:/Users/peter.szabo/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./images/
-me_logo.png>])
+{C:/Users/Virtualbox/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./images/m
+e_logo.png>])
 \openout2 = `cover/feladatkiiras.aux'.
 
  (cover/feladatkiiras.tex
@@ -701,8 +701,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 
-      [2
+l.22 	\SubSection{Alkalmaz√°sa}
+                                [2
 
 
 
@@ -711,102 +711,81 @@ l.31
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.52 	
-       [3]pdfTeX warning (ext4): destination with the same identifier (name{pag
-e.4}) has been already used, duplicate ignored
+l.46 ... } x_i \geq0, x_i \in \{0,1,2,\dots,c\}.$$
+                                                   [3]pdfTeX warning (ext4): de
+stination with the same identifier (name{page.4}) has been already used, duplic
+ate ignored
 <to be read again> 
                    \relax 
-l.85 	
-       [4] [5] [6] [7]
-Overfull \hbox (4.13533pt too wide) in paragraph at lines 237--252
+l.72 	
+       [4] [5] [6]
+Overfull \hbox (4.13533pt too wide) in paragraph at lines 214--229
 \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 k[]wi \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 W[]
 []:$ \T1/cmr/m/n/12 Konst-ru-·l-junk to-|
  []
 
-[8] [9]
+[7] [8]
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 313.
-
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 314.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 282.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 315.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 283.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 315.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 284.
 
-[10]) [11]
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 284.
+
+[9]
+<images/1.jpg, id=165, 401.5pt x 239.89626pt>
+File: images/1.jpg Graphic file (type jpg)
+<use images/1.jpg>
+Package pdftex.def Info: images/1.jpg  used on input line 301.
+(pdftex.def)             Requested size: 199.16928pt x 119.00706pt.
+<images/2.jpg, id=166, 451.6875pt x 257.96375pt>
+File: images/2.jpg Graphic file (type jpg)
+<use images/2.jpg>
+Package pdftex.def Info: images/2.jpg  used on input line 316.
+(pdftex.def)             Requested size: 199.16928pt x 113.74843pt.
+ [10 <./images/1.jpg> <./images/2.jpg>]) [11]
 \openout2 = `chapters/3_design.aux'.
 
  (chapters/3_design.tex
 3. fejezet.
-File: images/me_logo.png Graphic file (type png)
-<use images/me_logo.png>
-Package pdftex.def Info: images/me_logo.png  used on input line 42.
-(pdftex.def)             Requested size: 361.35278pt x 344.48965pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 53.
-[12
+) [12
 
 
 
 
 ]
-Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
-line 57.
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 61.
-Package hyperref Info: bookmark level for unknown prooF defaults to 0 on input 
-line 65.
-Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
-put line 69.
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
- line 73.
-Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
-t line 77.
-) [13]
 \openout2 = `chapters/4_implementation.aux'.
 
  (chapters/4_implementation.tex
 4. fejezet.
-(C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-(C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-(C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-(C:\Program Files\MiKTeX\tex/latex/listings\lstmisc.sty
-File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-) [14
+[13
 
 
 
 
-] [15]
-Overfull \hbox (28.41792pt too wide) in paragraph at lines 53--63
+] [14]
+Overfull \hbox (28.41792pt too wide) in paragraph at lines 10--20
 []\T1/cmr/m/n/12 go(); con-vert-To-Ar-ray(); arany-Tomb(); ren-de-zes(); tom-b-
 Ma-so-las(); ered-meny(); tortHelye-|
  []
 
 
-Overfull \hbox (15.71924pt too wide) in paragraph at lines 66--75
+Overfull \hbox (15.71924pt too wide) in paragraph at lines 23--32
 []\T1/cmr/m/n/12 --------------------------------------------------------------
 ---------------------- Szal-lita-si-fel-ada-ta En-|
  []
 
-[16]) [17]
+[15]) [16]
 \openout2 = `chapters/5_test.aux'.
 
  (chapters/5_test.tex
 5. fejezet.
-) [18
+) [17
 
 
 
@@ -816,12 +795,12 @@ Overfull \hbox (15.71924pt too wide) in paragraph at lines 66--75
 
  (chapters/6_summary.tex
 6. fejezet.
-) [19
+) [18
 
 
 
 
-] (dolgozat.bbl) [20
+] (dolgozat.bbl) [19
 
 
 
@@ -829,7 +808,7 @@ Overfull \hbox (15.71924pt too wide) in paragraph at lines 66--75
 ]
 \openout2 = `cover/hasznalati.aux'.
 
- (cover/hasznalati.tex) [21
+ (cover/hasznalati.tex) [20
 
 ]
 \tf@thm=\write6
@@ -839,17 +818,20 @@ Overfull \hbox (15.71924pt too wide) in paragraph at lines 66--75
 (cover/cimlap.aux) (cover/feladatkiiras.aux) (chapters/1_introduction.aux)
 (chapters/2_concept.aux) (chapters/3_design.aux) (chapters/4_implementation.aux
 ) (chapters/5_test.aux) (chapters/6_summary.aux) (cover/hasznalati.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `dolgozat.out' has not changed.
-(rerunfilecheck)             Checksum: 164655D02616D6E3DAF9104E67518719;2805.
+(rerunfilecheck)             Checksum: B7934418E5E6300BF7C791E0A52E77F3;2252.
  ) 
 Here is how much of TeX's memory you used:
- 15400 strings out of 478889
- 224842 string characters out of 2861004
- 771490 words of memory out of 3000000
- 32894 multiletter control sequences out of 15000+600000
+ 14848 strings out of 478869
+ 220341 string characters out of 2860365
+ 575307 words of memory out of 3000000
+ 32393 multiletter control sequences out of 15000+600000
  426264 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,12n,94p,3061b,1319s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,12n,94p,3061b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc}{C:/Program
  Files/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<C:/Program Files/MiKTe
 X/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type
@@ -859,24 +841,22 @@ fonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
 ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
-sfonts/latxfont/lcircle1.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
-ts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symb
-ols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Program
- Files/MiKTeX/fonts/type1/public/cm-super/sfbx1728.pfb><C:/Program Files/MiKTeX
-/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Program Files/MiKTeX/fonts/type1/
-public/cm-super/sfbx2488.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-sup
-er/sfrm1200.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfrm1440.p
-fb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfsl1200.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/cm-super/sfti1200.pfb><C:/Program Files/MiKTe
-X/fonts/type1/public/cm-super/sftt1200.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/cm-super/sfxc1200.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-su
-per/sfxc1440.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfxc2488.
-pfb><C:/Program Files/MiKTeX/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Program 
-Files/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on dolgozat.pdf (26 pages, 619881 bytes).
+sfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/
+symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfbx120
+0.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Pro
+gram Files/MiKTeX/fonts/type1/public/cm-super/sfbx1728.pfb><C:/Program Files/Mi
+KTeX/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Program Files/MiKTeX/fonts/ty
+pe1/public/cm-super/sfbx2488.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm
+-super/sfrm1200.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfrm14
+40.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfsl1200.pfb><C:/Pr
+ogram Files/MiKTeX/fonts/type1/public/cm-super/sfti1200.pfb><C:/Program Files/M
+iKTeX/fonts/type1/public/cm-super/sftt1200.pfb><C:/Program Files/MiKTeX/fonts/t
+ype1/public/cm-super/sfxc1200.pfb><C:/Program Files/MiKTeX/fonts/type1/public/c
+m-super/sfxc1440.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfxc2
+488.pfb>
+Output written on dolgozat.pdf (25 pages, 617906 bytes).
 PDF statistics:
- 390 PDF objects out of 1000 (max. 8388607)
- 66 named destinations out of 1000 (max. 500000)
- 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 327 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
 

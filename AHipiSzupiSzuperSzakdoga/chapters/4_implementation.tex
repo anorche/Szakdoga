@@ -1,48 +1,5 @@
 \Chapter{Megvalósítás}
 
-Ez a fejezet mutatja be a megvalósítás lépéseit.
-Itt lehet az esetlegesen előforduló technikai nehézségeket említeni.
-Be lehet már mutatni a program elkészült részeit.
-
-Meg lehet mutatni az elkészített programkód érdekesebb részeit.
-(Az érdekesebb részek bemutatására kellene szorítkozni.
-Többségében a szöveges leírásnak kellene benne lennie.
-Abból lehet kiindulni, hogy a forráskód a dolgozathoz elérhető, azt nem kell magába a dolgozatba bemásolni, elegendő csak behivatkozni.)
-
-A dolgozatban szereplő forráskódrészletekhez külön vannak programnyelvenként stílusok.
-Python esetében például így néz ki egy formázott kódrészlet.
-\begin{python}
-import sys
-
-if __name__ == '__main__':
-    pass
-\end{python}
-
-A stílusfájlok a \texttt{styles} jegyzékben találhatók.
-A stílusok között szerepel még C++, Java és Rust stílusfájl.
-Ezek használatához a \texttt{dolgozat.tex} fájl elején \texttt{usepackage} paranccsal hozzá kell adni a stílust, majd a stílusfájl nevével megegyező környezetet lehet használni.
-További példaként C++ forráskód esetében ez így szerepel.
-\begin{cpp}
-#include <iostream>
-
-class Sample : public Object
-{
-    // An empty class definition
-}
-\end{cpp}
-Stílusfájlokból elegendő csak annyit meghagyni, amennyire a dolgozatban szükség van.
-Más, C szintaktikájú nyelvekhez (mint például a JavaScript és C\#) a Java vagy C++ stílusfájlok átszerkesztésére van szükség.
-(Elegendő lehet csak a fájlnevet átírni, és a fájlban a környezet nevét.)
-
-Nyers adatok, parancssori kimenetek megjelenítéséhez a \texttt{verbatim} környezetet lehet használni.
-\begin{verbatim}
-$ some commands with arguments
-1 2 3 4 5
-$ _
-\end{verbatim}
-
-A kutatás jellegű témáknál ez a fejezet gyakorlatilag kimaradhat.
-Helyette inkább a fő vizsgálati módszerek, kutatási irányok kaphatnak külön-külön fejezeteket.
 A program úgy dolgozik, mint ahogy a felhasználó tenné papíron. Kiszámolja a kapott értékek es tömegek arányát, és ez alapján felállít egy új sorrendet: a legnagyobb aránypár kerül az elsőhelyre és a legkisebb a végére. Ezután megnézni, hogy a legnagyobb aránnyal rendelkező belefér e a zsákba. Ha igen, akkor 1 -es kerül az első (nulladik) indexre, és nézi a következő elemet. Ha egy olyan elemet találunk, ami már nem fér bele, akkor egy tört kerül megfelelő indexre, hogy a tömegének hanyadrésze fér bele a zsákba. A maradék elemeket kinullázza. A Z érték is megfelelően kiszámításra kerül. Ezután végig megyünk a fán. Az összes helyre, ahova tört került, megnézzük 1 és 0 érték fixálásával és a szülők már fixált értékeinek öröklésével  a Z értéket, hogy megtaláljuk azt a kombinációt, amikor a legtöbb elem ténylegesen belefér a zsákba.
 A program a kapott érték és tömeg értékeket külön 1-1 tömben tárolja. Az aranyTomb függvény segítségével kerül feltöltésre a harmadik tömb, ahova a kiszámolja a paraméterként kapott tömeg és érék tömbökből az elemek arányát. Ezután következik az arányok szerinti rendezés a rendezés metódus segítségével. Paraméterként megkapja mindhárom tömböt. A Java Arrays.sort() metódusával rendezem növekvő sorrendbe az aránytömb értékeit, majd egy ciklus és egy segédváltozó segítésével megfordítom az értékek sorrendjét, ezzel csökkenő értékbe rendezem őket. Ezáltál az arányok tömbje már megfelelő, de az értékek és a hozzájuk tartozó tömegek továbbra is rendezetlenek. Ezért két darab for ciklus segítésével össze hasonlítom az eredeteti arány tömböt, és a rendezetett, hogy megtaláljam, melyik elem melyik indexről melyik indexre került. Ha megvan, akkor a tömeg és értékek tömb egyes elemeinek indexét is hasonlóan mozgatom. 
 A rendezés után jön a fa egyes leveleinek kiszámítása az eredmeny metódus segítségével. Ez a metódus paraméterként a már rendezett tömeg és érték tömböt, a hátizsak méretét és egy láncolt listát kap. Emellett a metóduson belül szükség volt egy újabb tömbre, amiben azt tárólom, hogy a levél mely már fixelt elemeket örökli, és azok helyén nullával vagy eggyel számoljon. Ha az adott elem szabad, akkor -1 az értéke, ha fix nullánál 0, egynél pedig 1. Kezdetben minden értéke -1. Mérete megegyezik a kapott elemek számával. A listához hozzá adok a kapott elemek számával megegyező elemet és plusz mégegyet, ahova Z értéke kerül.
