@@ -10,15 +10,15 @@ public class Hatizsak {
 
     public static void main(String[] args) {
 
-        double[] ertek = {41, 29, 10, 20, 5};
-        double[] tomeg = {31, 36, 32, 13, 2};
-        double hatizsak = 50;
+        double[] ertek = {52, 54, 54, 1567, 324, 2};
+        double[] tomeg = {85, 465, 5, 5, 103, 1999};
+        double hatizsak = 2282;
         double[] aranyTomb = aranyTomb(ertek, tomeg);
-        ArrayList<Double> eredmenyLista = new ArrayList<>();
+        ArrayListDouble eredmenyLista = new ArrayList();
 
 
         rendezes(aranyTomb, tomeg, ertek);
-        //eredmeny(tomeg, ertek, hatizsak, eredmenyLista);
+        eredmeny(tomeg, ertek, hatizsak, eredmenyLista);
         listKiiras(eredmenyLista, tomeg.length + 1);
         maximumKiiras(eredmenyLista, tomeg);
     }
@@ -30,7 +30,7 @@ public class Hatizsak {
         hanyadik = 0;
 
         double[] aranyTomb = aranyTomb(ertek, tomeg);
-        ArrayList<Double> eredmenyLista = new ArrayList<>();
+        ArrayListDouble eredmenyLista = new ArrayList();
 
 
         rendezes(aranyTomb, tomeg, ertek);
@@ -40,12 +40,12 @@ public class Hatizsak {
         return convertToArray(eredmenyLista, tomeg.length + 1);
     }
 
-    public static double[][] convertToArray(ArrayList<Double> eredmenyLista, int meret){
-        double[][] output = new double[eredmenyLista.size()/meret][meret];
-        NumberFormat nf = new DecimalFormat("#0.0000");
+    public static double[][] convertToArray(ArrayListDouble eredmenyLista, int meret){
+        double[][] output = new double[eredmenyLista.size()meret][meret];
+        NumberFormat nf = new DecimalFormat(#0.0000);
 
-        for (int i = 0; i < eredmenyLista.size(); i++) {
-            output[Math.floorDiv(i, meret)][i%meret] = Double.parseDouble(nf.format(eredmenyLista.get(i)).replaceAll(",", "."));
+        for (int i = 0; i  eredmenyLista.size(); i++) {
+            output[Math.floorDiv(i, meret)][i%meret] = Double.parseDouble(nf.format(eredmenyLista.get(i)).replaceAll(,, .));
         }
 
         return output;
@@ -54,8 +54,8 @@ public class Hatizsak {
 
     public static double[] aranyTomb(double[] ertek, double[] tomeg) {
         double[] aranyTomb = new double[ertek.length];
-        for (int i = 0; i < ertek.length; i++) {
-            aranyTomb[i] = ertek[i] / tomeg[i];
+        for (int i = 0; i  ertek.length; i++) {
+            aranyTomb[i] = ertek[i]  tomeg[i];
         }
         return aranyTomb;
 
@@ -74,15 +74,15 @@ public class Hatizsak {
         Arrays.sort(aranyTomb);
 
 
-        //sorrend megforditas
-        for (int i = 0; i < aranyTomb.length / 2; i++) {
+        sorrend megforditas
+        for (int i = 0; i  aranyTomb.length  2; i++) {
             s1 = aranyTomb[(aranyTomb.length - 1) - i];
             aranyTomb[(aranyTomb.length - 1) - i] = aranyTomb[i];
             aranyTomb[i] = s1;
         }
 
         int nemvaltozott = 1;
-        for (int i = 0; i < tomeg.length; i++) {
+        for (int i = 0; i  tomeg.length; i++) {
             if (aranyTomb[i] != aranyTombEredeti[i]) {
                 nemvaltozott = 0;
                 break;
@@ -94,9 +94,9 @@ public class Hatizsak {
         }
 
 
-        //A tomegek sorrendjet modositja abban a sorrendben, mint az aranyokat
-        for (int i = 0; i < aranyTomb.length; i++) {
-            for (int j = 0; j < aranyTomb.length; j++) {
+        A tomegek es ertekek sorrendjet modositja abban a sorrendben, mint az aranyokat
+        for (int i = 0; i  aranyTomb.length; i++) {
+            for (int j = 0; j  aranyTomb.length; j++) {
                 if (aranyTomb[j] == aranyTombEredeti[i]) {
                     tomeg[j] = rendezettTomeg[i];
                     ertek[j] = rendezettErtek[i];
@@ -110,7 +110,7 @@ public class Hatizsak {
 
     public static double[] tombMasolas(double[] tomb) {
         double[] masoltTomb = new double[tomb.length];
-        for (int i = 0; i < tomb.length; i++) {
+        for (int i = 0; i  tomb.length; i++) {
             masoltTomb[i] = tomb[i];
         }
 
@@ -119,44 +119,34 @@ public class Hatizsak {
 
 
 
-    public static void eredmeny(double[] tomeg, double[] ertek, double hatizsak, ArrayList<Double> eredmenyLista) {
-//a maradekot kell elosztani a tomeggel, es azt beirni az eredmenybe
+    public static void eredmeny(double[] tomeg, double[] ertek, double hatizsak, ArrayListDouble eredmenyLista) {
+a maradekot kell elosztani a tomeggel, es azt beirni az eredmenybe
         double z = 0;
 
         double hatizsakEredeti = hatizsak;
         int[] fixek = new int[tomeg.length];
         Arrays.fill(fixek, -1);
 
-        for (int i = 0; i <= tomeg.length; i++) {
+        for (int i = 0; i = tomeg.length; i++) {
             eredmenyLista.add(0.0);
         }
 
 
-        for (int i = 0; i < tomeg.length; i++) {
-            if (tomeg[i] <= hatizsak) {
+        for (int i = 0; i  tomeg.length; i++) {
+            if (tomeg[i] = hatizsak) {
                 eredmenyLista.set(i, 1.0);
                 hatizsak = hatizsak - tomeg[i];
                 z = z + ertek[i];
                 eredmenyLista.set(tomeg.length, z);
             } else {
-                eredmenyLista.set(i, hatizsak / tomeg[i]);
-                z = z + (hatizsak / tomeg[i]) * ertek[i];
-                eredmenyLista.set(tomeg.length, z);
-                fixek[i] = 0;
-                //1,1,1,0.4,0,0,70.4, -1,-1,-1,0,-1,-1
-
-                tortHelyereNulla(tomeg, ertek, hatizsakEredeti, eredmenyLista, fixek, i);
-                fixek[i] = 1;
-                //1,1,1,0.4,0,0,70.4, -1,-1,-1,1,-1,-1
-                tortHelyereEgy(tomeg, ertek, hatizsakEredeti, eredmenyLista, fixek, i);
-                break;
+                nemFerBele(tomeg, ertek, hatizsak, eredmenyLista, fixek, z, hatizsakEredeti, i);
             }
 
         }
     }
 
-    public static void tortHelyereNulla(double[] tomeg, double[] ertek, double hatizsak, ArrayList<Double> eredmenyLista, int[] fixek, int tortIndex) {
-        for (int i = 0; i <= tomeg.length; i++) {
+    public static void tortHelyereNulla(double[] tomeg, double[] ertek, double hatizsak, ArrayListDouble eredmenyLista, int[] fixek, int tortIndex) {
+        for (int i = 0; i = tomeg.length; i++) {
             eredmenyLista.add(0.0);
         }
 
@@ -164,33 +154,27 @@ public class Hatizsak {
         hanyadik++;
         double hatizsakEredeti = hatizsak;
 
-        for (int i = 0; i < fixek.length; i++) {
-            if (fixek[i] == 1) { // TODO: szar
+        for (int i = 0; i  fixek.length; i++) {
+            if (fixek[i] == 1) {
 
                 hatizsak = hatizsak - tomeg[i];
                 z = z + ertek[i];
-                eredmenyLista.set(hanyadik * (tomeg.length + 1) + i, 1.0);
-                eredmenyLista.set(hanyadik * (tomeg.length + 1) + tomeg.length, z);
+                eredmenyLista.set(hanyadik  (tomeg.length + 1) + i, 1.0);
+                eredmenyLista.set(hanyadik  (tomeg.length + 1) + tomeg.length, z);
             } else if (fixek[i] == 0)
-                eredmenyLista.set(hanyadik * (tomeg.length + 1) + i, 0.0);
+                eredmenyLista.set(hanyadik  (tomeg.length + 1) + i, 0.0);
         }
 
 
-        for (int i = 0; i < tomeg.length; i++) {
+        for (int i = 0; i  tomeg.length; i++) {
             if (fixek[i] == -1) {
-                if (tomeg[i] <= hatizsak) {
-                    eredmenyLista.set(hanyadik * (tomeg.length + 1) + i, 1.0);
+                if (tomeg[i] = hatizsak) {
+                    eredmenyLista.set(hanyadik  (tomeg.length + 1) + i, 1.0);
                     hatizsak = hatizsak - tomeg[i];
                     z = z + ertek[i];
-                    eredmenyLista.set(hanyadik * (tomeg.length + 1) + tomeg.length, z);
+                    eredmenyLista.set(hanyadik  (tomeg.length + 1) + tomeg.length, z);
                 } else {
-                    eredmenyLista.set(hanyadik * (tomeg.length + 1) + i, hatizsak / tomeg[i]);
-                    z = z + (hatizsak / tomeg[i]) * ertek[i];
-                    eredmenyLista.set(hanyadik * (tomeg.length + 1) + tomeg.length, z);
-                    fixek[i] = 0;
-                    tortHelyereNulla(tomeg, ertek, hatizsakEredeti, eredmenyLista, fixek, i);
-                    fixek[i] = 1;
-                    tortHelyereEgy(tomeg, ertek, hatizsakEredeti, eredmenyLista, fixek, i);
+                    nemFerBele(tomeg, ertek, hatizsak, eredmenyLista, fixek, z, hatizsakEredeti, i);
                     break;
                 }
             }
@@ -199,8 +183,19 @@ public class Hatizsak {
         fixek[tortIndex] = -1;
     }
 
-    public static void tortHelyereEgy(double[] tomeg, double[] ertek, double hatizsak, ArrayList<Double> eredmenyLista, int[] fixek, int tortIndex) {
-        for (int i = 0; i <= tomeg.length; i++) {
+    public static void nemFerBele(double[] tomeg, double[] ertek, double hatizsak, ArrayListDouble eredmenyLista, int[] fixek, double z, double hatizsakEredeti, int i) {
+        eredmenyLista.set(hanyadik  (tomeg.length + 1) + i, hatizsak  tomeg[i]);
+        z = z + (hatizsak  tomeg[i])  ertek[i];
+        eredmenyLista.set(hanyadik  (tomeg.length + 1) + tomeg.length, z);
+        fixek[i] = 0;
+        tortHelyereNulla(tomeg, ertek, hatizsakEredeti, eredmenyLista, fixek, i);
+        fixek[i] = 1;
+        tortHelyereEgy(tomeg, ertek, hatizsakEredeti, eredmenyLista, fixek, i);
+        return;
+    }
+
+    public static void tortHelyereEgy(double[] tomeg, double[] ertek, double hatizsak, ArrayListDouble eredmenyLista, int[] fixek, int tortIndex) {
+        for (int i = 0; i = tomeg.length; i++) {
             eredmenyLista.add(0.0);
         }
         hanyadik++;
@@ -208,18 +203,19 @@ public class Hatizsak {
 
         double hatizsakEredeti = hatizsak;
 
-        for (int i = 0; i < fixek.length; i++) {
-            if (fixek[i] == 1) { // TODO: szar
+        for (int i = 0; i  fixek.length; i++) {
+            if (fixek[i] == 1) {
 
                 hatizsak = hatizsak - tomeg[i];
                 z = z + ertek[i];
-                eredmenyLista.set(hanyadik * (tomeg.length + 1) + i, 1.0);
+                eredmenyLista.set(hanyadik  (tomeg.length + 1) + i, 1.0);
+                eredmenyLista.set(hanyadik  (tomeg.length + 1) + i, 1.0);
             } else if (fixek[i] == 0)
-                eredmenyLista.set(hanyadik * (tomeg.length + 1) + i, 0.0);
+                eredmenyLista.set(hanyadik  (tomeg.length + 1) + i, 0.0);
         }
 
-        if (hatizsak < 0) {
-            for (int i = 0; i < tomeg.length+1; i++) {
+        if (hatizsak  0) {
+            for (int i = 0; i  tomeg.length+1; i++) {
                 eredmenyLista.remove(eredmenyLista.size() - 1);
             }
             hanyadik--;
@@ -227,25 +223,16 @@ public class Hatizsak {
             return;
         }
 
-        //eredmenyLista.set(hanyadik * (tomeg.length + 1) + tortIndex, 1.0);
 
-        for (int i = 0; i < tomeg.length; i++) {
+        for (int i = 0; i  tomeg.length; i++) {
             if (fixek[i] == -1) {
-                if (tomeg[i] <= hatizsak) {
-                    eredmenyLista.set(hanyadik * (tomeg.length + 1) + i, 1.0);
+                if (tomeg[i] = hatizsak) {
+                    eredmenyLista.set(hanyadik  (tomeg.length + 1) + i, 1.0);
                     hatizsak = hatizsak - tomeg[i];
                     z += ertek[i];
-                    eredmenyLista.set(hanyadik * (tomeg.length + 1) + tomeg.length, z);
+                    eredmenyLista.set(hanyadik  (tomeg.length + 1) + tomeg.length, z);
                 } else {
-                    eredmenyLista.set(hanyadik * (tomeg.length + 1) + i, hatizsak / tomeg[i]);
-                    z = z + (hatizsak / tomeg[i]) * ertek[i];
-                    eredmenyLista.set(hanyadik * (tomeg.length + 1) + tomeg.length, z);
-                    fixek[i] = 0;
-
-                    tortHelyereNulla(tomeg, ertek, hatizsakEredeti, eredmenyLista, fixek, i);
-                    fixek[i] = 1;
-                    tortHelyereEgy(tomeg, ertek, hatizsakEredeti, eredmenyLista, fixek, i);
-                    break;
+                    nemFerBele(tomeg, ertek, hatizsak, eredmenyLista, fixek, z, hatizsakEredeti, i);
                 }
             }
         }
@@ -253,44 +240,44 @@ public class Hatizsak {
         fixek[tortIndex] = -1;
     }
 
-    public static void listKiiras(ArrayList<Double> lista, int meret) {
-        for (int i = 0; i < lista.size(); i++) {
+    public static void listKiiras(ArrayListDouble lista, int meret) {
+        for (int i = 0; i  lista.size(); i++) {
             if (i % meret == 0)
                 System.out.println();
-            System.out.print(lista.get(i) + " ");
+            System.out.print(lista.get(i) +  );
 
         }
     }
 
-    public static double maximumKiiras(ArrayList<Double> lista, double[] tomb) {
+    public static double maximumKiiras(ArrayListDouble lista, double[] tomb) {
         double max = 0;
         int vanTort;
 
-        for (int i = tomb.length; i < lista.size(); i = i + tomb.length + 1) {
+        for (int i = tomb.length; i  lista.size(); i = i + tomb.length + 1) {
             vanTort = 0;
-            for (int j = 1; j < tomb.length; j++) {
+            for (int j = 1; j  tomb.length; j++) {
                 if (lista.get(i - j) % 1 != 0) {
                     vanTort = 1;
                     break;
                 }
             }
-            if (vanTort == 0 && lista.get(i) > max) {
+            if (vanTort == 0 && lista.get(i)  max) {
                 max = lista.get(i);
             }
         }
 
 
-        // System.out.println();
-        // System.out.println("Optimalis ize: " + max);
+         System.out.println();
+         System.out.println(Optimalis ize  + max);
         return max;
     }
 
     public static double searchmax(double[][] array) {
         double max = 0;
 
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i  array.length; i++) {
             double hasRational = 0;
-            for (int j = 0; j < array[i].length - 1; j++) {
+            for (int j = 0; j  array[i].length - 1; j++) {
                 hasRational += array[i][j];
             }
 
@@ -299,7 +286,7 @@ public class Hatizsak {
 
             double localMax = array[i][array[i].length-1];
 
-            max = max < localMax ? localMax : max; // ternary operator
+            max = max  localMax  localMax  max;  ternary operator
         }
 
         return max;
@@ -307,7 +294,6 @@ public class Hatizsak {
 
 
 }
-
 
 
 

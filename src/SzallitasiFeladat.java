@@ -36,8 +36,8 @@ public class SzallitasiFeladat {
     public static String go(double[][] matrix) {
         double[][] matrix2 = Pivot.matrixMasolas(matrix);
 
-        sb.setLength(0);
         kezdetiMegoldas(matrix);
+
         double megoldas = megoldas(matrix, matrix2);
 
         sb.append(megoldas);
@@ -54,9 +54,7 @@ public class SzallitasiFeladat {
         int j = 0;
 
         while (i < matrix.length-1 && j < matrix[0].length-1) {
-            sb.append("i: " + i + "\n");
-            sb.append("j: " + j + "\n");
-            if (oszlopVagySor(matrix, i, j) == 1) {
+            if (oszlopVagySor(matrix, i, j) == true) {
                 mentes = matrix[i][matrix[0].length - 1];
                 matrix[i][j] = matrix[i][matrix[0].length - 1];
                 for (int k = j + 1; k < matrix[0].length; k++)
@@ -72,20 +70,13 @@ public class SzallitasiFeladat {
                     for (int k = i + 1; k < matrix.length; k++)
                         matrix[k][j] = 0;
                 }
-                sb.append(" ");
-                sb.append(matrix[i][matrix[0].length - 1] + "\n");
-                sb.append(mentes + "\n");
-                sb.append(matrix[matrix.length-1][j] + "\n");
 
-                sb.append(" ");
                 matrix[i][matrix[0].length - 1] = matrix[i][matrix[0].length - 1] - mentes;
-                //matrix[matrix.length-1][j]=matrix[matrix.length-1][j]-mentes;
                 j++;
                 kezdoJ++;
                 i = kezdoI;
             }
 
-            sb.append("\n");
             matrixKiiras(matrix);
             sb.append("\n");
         }
@@ -95,11 +86,11 @@ public class SzallitasiFeladat {
 
     }
 
-    public static int oszlopVagySor(double[][] matrix, int sor, int oszlop) {
-        //1 -et ad vissza ha sor kisebb, 2 -t ha az oszlop
+    public static boolean oszlopVagySor(double[][] matrix, int sor, int oszlop) {
+        //true -t ad vissza ha sor kisebb, false -t ha az oszlop
         if (matrix[sor][matrix[0].length - 1] < matrix[matrix.length - 1][oszlop] || matrix[sor][matrix[0].length - 1] == matrix[matrix.length - 1][oszlop])
-            return 1;
-        return 0;
+            return true;
+        return false;
 
 
     }
@@ -117,4 +108,3 @@ public class SzallitasiFeladat {
 
 
 }
-
