@@ -1,0 +1,20 @@
+\select@language {magyar} \contentsline {chapter}{\numberline {1}Bevezetés}{1}{chapter.1}%
+\select@language {magyar} \contentsline {chapter}{\numberline {2}Koncepció}{2}{chapter.2}%
+\select@language {magyar} \contentsline {section}{\numberline {2.1}A fejezet célja}{2}{section.2.1}%
+\select@language {magyar} \contentsline {section}{\numberline {2.2}Tartalom és felépítés}{2}{section.2.2}%
+\select@language {magyar} \contentsline {section}{\numberline {2.3}Amit csak említés szintjén érdemes szerepeltetni}{2}{section.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {2.4}Lineáris egyenletrendszerek}{3}{section.2.4}%
+\select@language {magyar} \contentsline {section}{\numberline {2.5}Hátizsák probléma}{3}{section.2.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.5.1}Alkalmazása}{3}{subsection.2.5.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.5.2}Fajtái}{4}{subsection.2.5.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.5.3}Számítási bonyolultság}{4}{subsection.2.5.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.5.4}Megoldások}{5}{subsection.2.5.4}%
+\select@language {magyar} \contentsline {section}{\numberline {2.6}A közlekedési probléma megoldásan}{9}{section.2.6}%
+\select@language {magyar} \contentsline {chapter}{\numberline {3}Tervezés}{12}{chapter.3}%
+\select@language {magyar} \contentsline {section}{\numberline {3.1}Táblázatok}{12}{section.3.1}%
+\select@language {magyar} \contentsline {section}{\numberline {3.2}Ábrák}{12}{section.3.2}%
+\select@language {magyar} \contentsline {section}{\numberline {3.3}További környezetek}{12}{section.3.3}%
+\select@language {magyar} \contentsline {chapter}{\numberline {4}Megvalósítás}{14}{chapter.4}%
+\select@language {magyar} \contentsline {chapter}{\numberline {5}Tesztelés}{18}{chapter.5}%
+\select@language {magyar} \contentsline {chapter}{\numberline {6}Összefoglalás}{19}{chapter.6}%
+\select@language {magyar} \contentsline {chapter}{Irodalomjegyzék}{20}{chapter.6}%
